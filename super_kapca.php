@@ -3,7 +3,7 @@
 Plugin Name: Super Kapca BRH
 Plugin URI: http://bangroyhan.pasti.in
 Description: Super kapca ini ane buat dengan penuh kerendahan hati, mohon untuk update silahkan kunjungi <a href="http://bangroyhan.pasti.in">Bang Roy Han</a>
-Version: 1.4
+Version: 1.5
 Author: BangRoyHan
 Author URI: http://bangroyhan.pasti.in
 License: GPLv2
@@ -18,7 +18,7 @@ add_menu_page('Super Kapca By Bang Roy Han', 'Super Kapca', 'administrator', __F
 function super_kapca_info() {
 echo "<div class=\"wrap\">
 <table>
-<tr><td><img src=\"http://bangroyhan.pasti.in/wp-content/uploads/sites/6/2015/02/brh.png\" /></td>
+<tr><td><img src=\"".plugins_url( 'logo.png', __FILE__ )."\" /></td>
 <td><h2>Terimakasih Telah Menggunakan Super Kapca</h2></td></tr>
 <tr><td colspan=\"2\"><p>Plugin super kapca ini dibuat oleh <a href=\"http://bangroyhan.pasti.in\" target=\"_blank\">Bang Roy Han</a>, untuk membantu pengguna wordpress dalam memblokir semua spam yang ada.</p>
 <p>Terutama memberikan kemudahan pada administrator jaringan situs berbasis wordpress dalam memberikan keamanan dan kenyamanan blog. Tidak memerlukan konfigurasi per akun blog, plugin ini sudah otomatis aktif digunakan pada semua blog multisite wordpress anda. Untuk informasi selengkapnya silahkan kunjungi <a href=\"http://bangroyhan.pasti.in\" target=\"_blank\">Bang Roy Han</a></p>
@@ -102,7 +102,7 @@ function super_proseskomen(){
     cursor:pointer;
     border: none;
     padding: 16px 20px 16px 20px;
-    background: url('https://abangroyhan.files.wordpress.com/2015/03/brh.png') no-repeat;
+    background: url('".plugins_url( 'brh.png', __FILE__ )."') no-repeat;
     -moz-background-size:100% 100%;
     -webkit-background-size:100% 100%;
     background-size:100% 100%;
@@ -112,14 +112,14 @@ function super_proseskomen(){
     border: none;
     padding: 16px 20px 16px 20px;
     cursor:pointer;
-    background: url('https://abangroyhan.files.wordpress.com/2015/03/brh2.png') no-repeat;
+    background: url('".plugins_url( 'brh2.png', __FILE__ )."') no-repeat;
     -moz-background-size:100% 100%;
     -webkit-background-size:100% 100%;
     background-size:100% 100%;
 }
 
 #labelrad input[type=\"radio\"]:checked + #$bnr1 {
-    background: url('https://abangroyhan.files.wordpress.com/2015/03/brh1.png') no-repeat;
+    background: url('".plugins_url( 'brh1.png', __FILE__ )."') no-repeat;
     -moz-background-size:100% 100%;
     -webkit-background-size:100% 100%;
     background-size:100% 100%;
@@ -127,7 +127,7 @@ function super_proseskomen(){
 }
 
 #labelrad input[type=\"radio\"]:checked + #$slh1 {
-    background: url('https://abangroyhan.files.wordpress.com/2015/03/brh1.png') no-repeat;
+    background: url('".plugins_url( 'brh1.png', __FILE__ )."') no-repeat;
     -moz-background-size:100% 100%;
     -webkit-background-size:100% 100%;
     background-size:100% 100%;
@@ -176,14 +176,14 @@ if($isikomen['comment_type'] != '' && $isikomen['comment_type'] != 'comment') {
 }
 
 if(!isset($_REQUEST['kapcASUper_oidar'])) {
-wp_die( __('<table><tr><td valign="top"><h1>PERINGATAN.!</h1>Anda tidak melakukan verifikasi apakah anda manusia, silahkan kembali.<br><br><h1>WARNING.!</h1>You did not verify whether you are a human, please return.</td><td><img src="http://romil.in/wp-content/uploads/Google_thats_all_we_know_error.png" style="float:right;padding:10px;" alt="Peringatan"></td></tr></table>', 'buffercode_captcha'));
+wp_die( __('<table><tr><td valign="top"><h1>PERINGATAN.!</h1>Anda tidak melakukan verifikasi apakah anda manusia, silahkan kembali.<br><br><h1>WARNING.!</h1>You did not verify whether you are a human, please return.</td><td><img src="'.plugins_url( 'gagal.png', __FILE__ ).'" style="float:right;padding:10px;" alt="Peringatan"></td></tr></table>', 'buffercode_captcha'));
 }
 
 if($_REQUEST['kapcASUper_oidar']==esc_attr(base64_decode($_REQUEST['AAAsuperKAPCA']))) {
 return($isikomen);
 }
 else {
-wp_die( __('<table><tr><td valign="top"><h1>GAGAL.!</h1> Anda salah memilih jawaban verifikasi, silahkan kembali.<br><br><h1>ERROR.!</h1> You choose the wrong answer verification, please return.</td><td><img src="http://romil.in/wp-content/uploads/Google_thats_all_we_know_error.png" style="float:right;padding:10px;" alt="Peringatan"></td></tr></table>', 'buffercode_captcha'));
+wp_die( __('<table><tr><td valign="top"><h1>GAGAL.!</h1> Anda salah memilih jawaban verifikasi, silahkan kembali.<br><br><h1>ERROR.!</h1> You choose the wrong answer verification, please return.</td><td><img src="'.plugins_url( 'gagal.png', __FILE__ ).'" style="float:right;padding:10px;" alt="Peringatan"></td></tr></table>', 'buffercode_captcha'));
 }
 }
 
